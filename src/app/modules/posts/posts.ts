@@ -25,7 +25,6 @@ export class Posts implements OnInit, OnDestroy {
   }
 
   public getPosts(): void {
-    this.loadingService.loadingOn();
     this.getPostsSubscription = this.postService.getPosts().subscribe({
       next: (posts) => {
         this.posts = posts;
@@ -34,7 +33,6 @@ export class Posts implements OnInit, OnDestroy {
 
       },
       complete: () => {
-        this.loadingService.loadingOff();
       }
     });
   }

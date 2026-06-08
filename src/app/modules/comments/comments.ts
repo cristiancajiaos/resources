@@ -20,7 +20,6 @@ export class Comments implements OnDestroy {
   private getCommentsSubscription: Subscription;
 
   public getComments(): void {
-    this.loadingService.loadingOn();
     this.commentService.getComments().subscribe({
       next: (comments) => {
         this.comments = comments;
@@ -29,7 +28,6 @@ export class Comments implements OnDestroy {
 
       },
       complete: () => {
-        this.loadingService.loadingOff();
       }
     });
   }
