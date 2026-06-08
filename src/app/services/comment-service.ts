@@ -10,10 +10,8 @@ export class CommentService {
 
   private http = inject(HttpClient);
 
-  private baseUrl: string = 'https://jsonplaceholder.typicode.com';
-
   public getComments(): Observable<Comment[]> {
-    return this.http.get<Comment[]>(`${this.baseUrl}/comments`);
+    return this.http.get<Comment[]>(`/comments`);
   }
 
 

@@ -9,9 +9,7 @@ import { Post } from '../interfaces/post';
 export class PostService {
   private http = inject(HttpClient);
 
-  private baseUrl: string = 'https://jsonplaceholder.typicode.com';
-
   public getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.baseUrl}/posts`)
+    return this.http.get<Post[]>(`/posts`)
   }
 }
