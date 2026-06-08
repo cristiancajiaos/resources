@@ -7,7 +7,7 @@ import { LoadingService } from '../../services/loading-service';
 
 @Component({
   selector: 'app-posts',
-  imports: [LoadingIndicator],
+  imports: [],
   templateUrl: './posts.html',
   styleUrl: './posts.scss',
 })
@@ -21,7 +21,7 @@ export class Posts implements OnInit, OnDestroy {
   private getPostsSubscription: Subscription;
 
   ngOnInit(): void {
-    
+
   }
 
   public getPosts(): void {
