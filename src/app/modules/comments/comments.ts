@@ -1,4 +1,4 @@
-import { Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject, OnInit } from '@angular/core';
 import { CommentService } from '../../services/comment-service';
 import { Subscription } from 'rxjs';
 import { LoadingService } from '../../services/loading-service';
@@ -10,7 +10,8 @@ import { Comment } from '../../interfaces/comment';
   templateUrl: './comments.html',
   styleUrl: './comments.scss',
 })
-export class Comments implements OnDestroy {
+export class Comments implements OnInit, OnDestroy {
+
 
   public commentService = inject(CommentService);
   public loadingService = inject(LoadingService);
@@ -18,6 +19,10 @@ export class Comments implements OnDestroy {
   public comments: Comment[] = [];
 
   private getCommentsSubscription: Subscription;
+
+  ngOnInit(): void {
+    this.getComments();
+  }
 
   public getComments(): void {
     this.commentService.getComments().subscribe({

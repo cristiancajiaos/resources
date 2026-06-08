@@ -21,7 +21,7 @@ export class Posts implements OnInit, OnDestroy {
   private getPostsSubscription: Subscription;
 
   ngOnInit(): void {
-
+    this.getPosts();
   }
 
   public getPosts(): void {
