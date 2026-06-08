@@ -1,1 +1,13 @@
-<p>posts works!</p>
+<section class="posts">
+  <button class="btn btn-primary" (click)="getPosts()">
+    Get posts
+  </button>
+
+  <hr />
+
+  <ul>
+    @for (post of posts; track post.id) {
+      <li>{{ post.title }}</li>
+    }
+  </ul>
+</section>
